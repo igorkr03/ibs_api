@@ -9,14 +9,13 @@ class UrlResource(Enum):
 
 
 class RequestType(Enum):
-    GET_LIST_USERS = '/api/users?page=2'
-    GET_SINGLE_USER = '/api/users/2'
-    GET_USER_NOT_FOUND = '/api/users/23'
-    GET_LIST_RESOURCE = '/api/unknown'
-    GET_SINGLE_RESOURCE = '/api/unknown/2'
-    GET_LIST_RESOURCE_NOT_FOUND = '/api/unknown/23'
+    LIST_USERS = '/api/users?page=2'
+    SINGLE_USER = '/api/users/2'
+    USER_NOT_FOUND = '/api/users/23'
+    LIST_RESOURCE = '/api/unknown'
+    SINGLE_RESOURCE = '/api/unknown/2'
+    LIST_RESOURCE_NOT_FOUND = '/api/unknown/23'
     CREATE_USER = '/api/users'
-    UPDATE_USER = '/api/users/2'
     REGISTER_USER = '/api/register'
     LOGIN_USER = '/api/login'
     DELAYED_RESPONSE = '/api/users?delay=3'

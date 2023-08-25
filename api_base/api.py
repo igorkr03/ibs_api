@@ -1,9 +1,9 @@
 from jsonschema import validate, exceptions
 
-from register.models import ResponseModel
-from register.requests import Client
+from api_base.models import ResponseModel
+from api_base.requests import Client
 
-class Register:
+class ApiRequest:
     def __init__(self, url):
         self.url = url
         self.client = Client()

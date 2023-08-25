@@ -1,7 +1,7 @@
 import pytest
 from selenium import webdriver
 
-from register.models import LoginRegisterUserSuccess, CreateUpdateUser
+from api_base.models import CreateUpdateUser
 
 
 @pytest.fixture(scope="session")
