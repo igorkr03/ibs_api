@@ -8,16 +8,13 @@ class Register:
         self.url = url
         self.client = Client()
 
-    def register_user(self, body: dict, method: str, url_api: str):
+    def action_user(self, body: dict, method: str, url_api: str):
         response = self.client.custom_request(method, f"{self.url}{url_api}", json=body)
-        return ResponseModel(status=response.status_code, response=response.reason)
+        response_data = {}
+        if response.status_code != 204:
+            response_data = response.json()
+        return ResponseModel(status=response.status_code, response=response_data)
 
-    def get_data(self, method: str, url_api: str, schema):
+    def get_data(self, method: str, url_api: str):
         response = self.client.custom_request(method, f"{self.url}{url_api}")
-       # try:
-       #     validate(instance=response.json(), schema=schema)
-       #     print("YESYES")
-       #except exceptions.ValidationError as ve:
-       #     print("DFDFDFDDG", ve)
-        #validate(instance=response.json(), schema=schema), "ERRROR"
         return ResponseModel(status=response.status_code, response=response.json())
